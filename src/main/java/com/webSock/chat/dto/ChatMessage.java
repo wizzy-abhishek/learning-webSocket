@@ -1,8 +1,17 @@
 package com.webSock.chat.dto;
 
 import com.webSock.chat.enums.MessageType;
+import lombok.*;
+import org.springframework.messaging.handler.annotation.SendTo;
 
-public record ChatMessage (String content,
-                           String sender,
-                           MessageType messageType){
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+public class ChatMessage {
+
+   private String content;
+   private String sender;
+   private MessageType type;
 }
